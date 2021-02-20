@@ -7,7 +7,8 @@ plant.getImages = () => {
 	const url = new URL(proxy);
 	url.search = new URLSearchParams({
 		reqUrl: plant.apiUrl,
-		'params[token]': plant.apiKey
+		'params[token]': plant.apiKey,
+		'param[distribution]': 'Canada'
 	});
 	fetch(url).then((response) => {
 		console.log(response)
