@@ -17,23 +17,22 @@ plantApp.getPlants = () => {
 		reqUrl: plantApp.apiUrl,
 		'params[token]': plantApp.apiKey,
 		'params[filter[establishment]]': 'native',
-		'params[page]': randomPage()
+		'params[filter_not[ATTRIBUTE]]': 'null',
+		// 'params[]' // potentially remove https
+		'params[page]': '1'
 	});
 	fetch(url).then((response) => {
-		console.log(response)
 		return response.json()
 	}).then((jsonResponse) => {
-		// console.log(jsonResponse.data)	
-	// }).catch(error => {
-	// 	console.log(error);
 		plantApp.displayCards(jsonResponse.data)
+	}).catch(error => {
+		console.log(error);
 	});
 };
 
 plantApp.getRegion = (event) => {
 	plantApp.apiUrl = `https://trefle.io/api/v1/distributions/${event.target.value}/plants`;
 	plantApp.getPlants();
-	console.log(plantApp.apiUrl)
 }
 
 plantApp.createEventListener = () => {
@@ -67,11 +66,16 @@ plantApp.displayCards = (plantArray) => {
 
 		treeCard.appendChild(cardContainer);
 
-		console.log(treeCard)
-		console.log(plant.image_url)
-		console.log(plant.common_name)
+		console.log(plantArray)
 
-
+		//TESTING
+		// removeCharacterS = (httpsURL, positionOfS) => {
+		// 	part1 = httpsURL.substring(0, positionOfS);
+		// 	part2 = httpsURL.substring(positionOfS + 1, httpsURL.length);
+		// }
+		
+		// const imgUrl = plant.image_url;
+		// console.log(removeCharacterS(imgUrl, 6))
 
 	}) 
 }
@@ -81,3 +85,5 @@ plantApp.init = () => {
 };
 
 plantApp.init();
+
+
