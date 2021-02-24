@@ -54,6 +54,7 @@ plantApp.displayCards = (plantArray) => {
 		imageContainer.classList.add('imageContainer');
 		
 		const plantImage = document.createElement('img');
+		//look at URL and apply rejex to it, then add updated URL property 
 		plantImage.src = plant.image_url;
 		plantImage.alt = plant.common_name;
 		
