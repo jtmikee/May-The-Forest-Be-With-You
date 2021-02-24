@@ -3,14 +3,46 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
 body {
-  background-color: #d3b685;
+  background-color: #978461;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 62.5%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f8f1de;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .wrapper {
   width:90%;
   margin: 0 auto;
   max-width:1200px;
-  background-color: #404437;
+  background-color: #3c3b21;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 9rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+label,
+a,
+p {
+  font-size: 1.2rem;
+  text-transform: none;
+}
+
+a {
+  color: #f8f1de;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .imageContainer {
@@ -21,12 +53,22 @@ body {
   overflow: hidden;
 }
 
-li {
-  border: 1px solid navy;
+#cardHolder {
   width: 275px;
+  height: 400px;
 }
 
 img {
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  /* display: block; */
+}
+
+footer {
+  background: #232319;
+  line-height: 4rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 100;
 }
