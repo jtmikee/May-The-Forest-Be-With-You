@@ -38,11 +38,11 @@ plantApp.getRegion = (event) => {
 plantApp.createEventListener = () => {
 	document.querySelector('#regionSelector').addEventListener('change', (event) => {
 		plantApp.getRegion(event);
-	})	
+	})
 }
 
 plantApp.displayCards = (plantArray) => {
-	
+
 	const treeCard = document.querySelector('#cardHolder');
 	treeCard.innerHTML = '';
 	plantArray.forEach((plant) => {
@@ -52,33 +52,59 @@ plantApp.displayCards = (plantArray) => {
 
 		const imageContainer = document.createElement('div');
 		imageContainer.classList.add('imageContainer');
-		
+
 		const plantImage = document.createElement('img');
+
+
+
+		//REGEX TEST
 		//look at URL and apply rejex to it, then add updated URL property 
+
+		const httpsPattern = /https/;
+		// let fixedHttps = httpsPattern.replace('https', "http");
+		console.log(httpsPattern.test(plantImage.src))
+
+		// const httpsPattern = /https://bs.floristic.org//
+		// let fixedHttps = httpsPattern.replace('https', "http");
+		// 	console.log(httpsPattern.test(plantImage.src))
+
+		// fixHttps = () => {
+		// 	const httpsPattern = /https/;
+		// 	let fixedHttps = httpsPattern.replace('https', "http")
+		// }
+
+		console.log(plant.image_url)
+
+		// urlToFix.fixHttps()
+
+		//END OF REGEX TEST
+
+
+
+
 		plantImage.src = plant.image_url;
 		plantImage.alt = plant.common_name;
-		
+
 		const plantTitle = document.createElement('h2');
 		plantTitle.innerText = plant.common_name;
 
-		
 		imageContainer.appendChild(plantImage);
 		cardContainer.append(imageContainer, plantTitle);
 
 		treeCard.appendChild(cardContainer);
 
-		console.log(plantArray)
+		// console.log(plantArray)
 
 		//TESTING
 		// removeCharacterS = (httpsURL, positionOfS) => {
 		// 	part1 = httpsURL.substring(0, positionOfS);
 		// 	part2 = httpsURL.substring(positionOfS + 1, httpsURL.length);
 		// }
-		
+
 		// const imgUrl = plant.image_url;
 		// console.log(removeCharacterS(imgUrl, 6))
 
-	}) 
+	})
 }
 
 plantApp.init = () => {
