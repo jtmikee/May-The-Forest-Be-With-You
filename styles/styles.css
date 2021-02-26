@@ -63,10 +63,10 @@ a {
 .imageContainer {
   height: 280px;
   width: 200px;
-  border-radius: 67% 0;
   margin: 20px;
   overflow: hidden;
-  border: 2px solid black;
+  border-radius: 67% 0;
+  /* border: 2px solid black; */
 }
 
 img {
