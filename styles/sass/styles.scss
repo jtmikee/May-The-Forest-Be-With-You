@@ -6,36 +6,46 @@
 body {
   background-color: $bark;
   
-  .wrapper {
+  .wrapper,
+  .gradient {
     width:80%;
     margin: 0 auto;
-    max-width:1200px;
+    max-width: 1200px;
     background-image: url(../../assets/treebark.jpg); 
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    .wrapper::-webkit-scrollbar {
+      display: none;
+    }
 
     .gradient {
-      background: linear-gradient(180deg, rgba(35,35,25,0.2) 0%, rgba(35,35,25,0.5655729293823242) 12%, rgba(35,35,25,0.8686979293823243) 32%, rgba(35,35,25,1) 59%);
+      width: 100%;
+      background: linear-gradient(180deg, rgba(35,35,25,0.6608695652173913) 0%, rgba(35,35,25,0.8686979293823243) 11%, rgba(35,35,25,0.9449275362318841) 22%, rgba(35,35,25,1) 31%);
       height: 100vh;
     }
   
-    .h1 {
-      display: flex;
-      flex-direction: column;
-      position: relative;
+    // .h1 {
+    //   display: flex;
+    //   flex-direction: column;
+    //   position: relative;
 
       h1 {
         font-size: 4rem;
-        line-height: 9rem;
-        position: relative;
+        line-height: 4rem;
+        padding: 50px 40px;
+        text-shadow: -4px -2px 3px rgba(35, 35, 25, 1);
+        // position: relative
       }
       
-      .shadow {
-          color: $forest;
-          position: absolute;
-          width: 100%;
-          font-weight: 800;
+      // .shadow {
+      //     color: $forest;
+      //     position: absolute;
+      //     width: 100%;
+      //     font-weight: 800;
         //   perspective: 50px;
         //   perspective-origin: 50% 100%;
         //   display: inline-block;
@@ -48,9 +58,9 @@ body {
         //   transform: scaleY(0.5) rotateX(-15deg);
         //   transform-origin: 50% 100%;
         //   opacity: .3;
-        }
-      }
-    }
+    //     }
+    //   }
+    // }
     
     h2 {
       font-size: 1.5rem;
@@ -68,24 +78,46 @@ body {
       line-height: 5rem;
       text-transform: none;
     }
-    
-    option {
-      color: $deepForest;
-      font-size: 1.2rem;
-    }
-    
+
     a {
       text-decoration: none;
     }
-  
+
+    form {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+
+      option {
+        color: $deepForest;
+        font-size: 1.2rem;
+      }
+
+      label {
+        background-color: $bark;
+        display: inline-block;
+      }
+
+      select {
+        padding-bottom: 8px;
+        border: none;
+        background-color: $birch;
+        outline: 0;
+        appearance: none;
+      }
+    }
+    
     #cardHolder {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      height: 100%;
 
       .cardContainer {
-        border: 4px solid $birch;
+        border: 7px solid $bark;
         margin: 20px;
+        background: $forest;
+        padding: 10px;
 
         .imageContainer {
           height: 280px;
@@ -93,7 +125,6 @@ body {
           margin: 20px;
           overflow: hidden;
           border-radius: 67% 0;
-          /* border: 2px solid black; */
           img {
             object-fit: cover;
             object-position: center;
@@ -112,3 +143,4 @@ body {
     text-align: center;
     font-weight: 100;
   }
+}
