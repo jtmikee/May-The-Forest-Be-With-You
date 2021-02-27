@@ -1,5 +1,5 @@
 const plantApp = {}
-const proxy = 'http://proxy.hackeryou.com';
+const proxy = 'https://proxy.hackeryou.com';
 
 plantApp.apiUrl = `https://trefle.io/api/v1/distributions/ONT/plants`;
 plantApp.apiKey = 'v_NcQ2f7qlXCw9rVIw66YqesnTQnztxk1NMmt64BOuA';
