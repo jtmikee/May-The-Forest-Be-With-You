@@ -8,9 +8,6 @@ function randomPage() {
 	return Math.floor(Math.random() * 25 + 1)
 }
 
-// prevent default bahaviour
-// filter image requirements - only display if there IS an image url (like fashion codealong we did)
-
 plantApp.getPlants = () => {
 	const url = new URL(proxy);
 	url.search = new URLSearchParams({
@@ -18,7 +15,6 @@ plantApp.getPlants = () => {
 		'params[token]': plantApp.apiKey,
 		'params[filter[establishment]]': 'native',
 		'params[filter_not[ATTRIBUTE]]': 'null',
-		// 'params[]' // potentially remove https
 		'params[page]': '1'
 	});
 	fetch(url).then((response) => {
@@ -55,41 +51,7 @@ plantApp.displayCards = (plantArray) => {
 
 		const plantImage = document.createElement('img');
 
-
-		plantTitle.src = plant.image_url;
-		plantImage.alt = plant.common_name;
-
-		const plantTitle = document.createElement('h2');
-		plantTitle.innerText = plant.common_name;
-
-		imageContainer.appendChild(plantImage);
-		cardContainer.append(imageContainer, plantTitle);
-
-		treeCard.appendChild(cardContainer);
-
-		console.log(img.src)
-
-
-
-	})
-}
-
-plantApp.displayCards = (plantArray) => {
-
-	const treeCard = document.querySelector('#cardHolder');
-	treeCard.innerHTML = '';
-	plantArray.forEach((plant) => {
-
-		const cardContainer = document.createElement('div');
-		cardContainer.classList.add('cardContainer');
-
-		const imageContainer = document.createElement('div');
-		imageContainer.classList.add('imageContainer');
-
-		const plantImage = document.createElement('img');
-
 		plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
-
 
 		plantImage.src = plant.image_url;
 		plantImage.alt = plant.common_name;
@@ -97,7 +59,6 @@ plantApp.displayCards = (plantArray) => {
 		const plantTitle = document.createElement('h2');
 		plantTitle.innerText = plant.common_name;
 
-
 		imageContainer.appendChild(plantImage);
 		cardContainer.append(imageContainer, plantTitle);
 
@@ -105,11 +66,9 @@ plantApp.displayCards = (plantArray) => {
 	})
 }
 
-
 plantApp.reload = () => {
 	document.querySelector('form').reset();
 }
-
 
 plantApp.init = () => {
 	plantApp.createEventListener()
