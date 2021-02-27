@@ -218,19 +218,16 @@ textarea {
   text-align: center;
   text-transform: capitalize;
   color: #f8f1de;
+  cursor: default;
 }
 
 body {
   background-color: #978461;
 }
 
-body .displayNone {
-  display: none;
-}
-
-body .wrapper,
-body .gradient {
-  width: 75%;
+.wrapper,
+.gradient {
+  width: 80%;
   margin: 0 auto;
   max-width: 1200px;
   background-image: url(../assets/treebark.jpg);
@@ -243,21 +240,18 @@ body .gradient {
   /* Firefox */
 }
 
-body .wrapper .wrapper::-webkit-scrollbar,
-body .gradient .wrapper::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
   display: none;
 }
 
-body .wrapper .gradient,
-body .gradient .gradient {
+.gradient {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 35, 25, 0.66087)), color-stop(11%, rgba(35, 35, 25, 0.868698)), color-stop(22%, rgba(35, 35, 25, 0.944928)), color-stop(31%, #232319));
   background: linear-gradient(180deg, rgba(35, 35, 25, 0.66087) 0%, rgba(35, 35, 25, 0.868698) 11%, rgba(35, 35, 25, 0.944928) 22%, #232319 31%);
   height: 100vh;
 }
 
-body .wrapper h1,
-body .gradient h1 {
+h1 {
   font-size: 4rem;
   line-height: 4rem;
   padding: 50px 40px;
@@ -265,8 +259,7 @@ body .gradient h1 {
   position: relative;
 }
 
-body .wrapper h2,
-body .gradient h2 {
+h2 {
   font-size: 1.5rem;
   margin: 10px 15px;
   width: 230px;
@@ -275,25 +268,19 @@ body .gradient h2 {
   text-shadow: 5px 5px 3px #232319;
 }
 
-body .wrapper label,
-body .wrapper select,
-body .wrapper a,
-body .wrapper p,
-body .gradient label,
-body .gradient select,
-body .gradient a,
-body .gradient p {
+label,
+select,
+a,
+p {
   font-size: 1.3rem;
   text-transform: none;
 }
 
-body .wrapper a,
-body .gradient a {
+a {
   text-decoration: none;
 }
 
-body .wrapper form,
-body .gradient form {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,15 +289,7 @@ body .gradient form {
           justify-content: center;
 }
 
-body .wrapper form option,
-body .gradient form option {
-  color: #232319;
-  font-size: 1.2rem;
-  background-color: #978461;
-}
-
-body .wrapper form select,
-body .gradient form select {
+form select {
   border: none;
   background-color: #978461;
   outline: 0;
@@ -319,20 +298,25 @@ body .gradient form select {
           appearance: none;
   height: 40px;
   width: 300px;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
   -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
-body .wrapper form select:hover, body .wrapper form select:focus,
-body .gradient form select:hover,
-body .gradient form select:focus {
+form select:hover, form select:focus {
   background-color: #f8f1de;
+  cursor: pointer;
 }
 
-body .wrapper #cardHolder,
-body .gradient #cardHolder {
+form option {
+  color: #232319;
+  font-size: 1.2rem;
+  background-color: #978461;
+  position: absolute;
+}
+
+#cardHolder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,8 +329,7 @@ body .gradient #cardHolder {
   margin-top: 50px;
 }
 
-body .wrapper #cardHolder .cardContainer,
-body .gradient #cardHolder .cardContainer {
+#cardHolder .cardContainer {
   border: 7px solid #978461;
   margin: 20px;
   background: #3c3b21;
@@ -355,8 +338,7 @@ body .gradient #cardHolder .cardContainer {
           box-shadow: 5px 5px 20px -5px black;
 }
 
-body .wrapper #cardHolder .cardContainer .imageContainer,
-body .gradient #cardHolder .cardContainer .imageContainer {
+#cardHolder .cardContainer .imageContainer {
   height: 280px;
   width: 200px;
   margin: 20px;
@@ -366,8 +348,7 @@ body .gradient #cardHolder .cardContainer .imageContainer {
           box-shadow: 10px 10px 10px #232319;
 }
 
-body .wrapper #cardHolder .cardContainer .imageContainer img,
-body .gradient #cardHolder .cardContainer .imageContainer img {
+#cardHolder .cardContainer .imageContainer img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
@@ -376,9 +357,10 @@ body .gradient #cardHolder .cardContainer .imageContainer img {
   width: 100%;
 }
 
-body footer {
-  background: #3c3b21;
-  line-height: 4rem;
+footer {
+  width: 80%;
+  background: #232319;
+  line-height: 7rem;
   margin: 0 auto;
   text-align: center;
   font-weight: 100;
