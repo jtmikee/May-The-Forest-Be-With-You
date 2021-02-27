@@ -261,7 +261,8 @@ body .gradient h1 {
   font-size: 4rem;
   line-height: 4rem;
   padding: 50px 40px;
-  text-shadow: -4px -2px 3px #232319;
+  text-shadow: 8px 6px 3px black;
+  position: relative;
 }
 
 body .wrapper h2,
@@ -271,6 +272,7 @@ body .gradient h2 {
   width: 230px;
   font-weight: 100;
   text-transform: uppercase;
+  text-shadow: 5px 5px 3px #232319;
 }
 
 body .wrapper label,
@@ -282,7 +284,6 @@ body .gradient select,
 body .gradient a,
 body .gradient p {
   font-size: 1.3rem;
-  line-height: 5rem;
   text-transform: none;
 }
 
@@ -299,30 +300,35 @@ body .gradient form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
 }
 
 body .wrapper form option,
 body .gradient form option {
   color: #232319;
   font-size: 1.2rem;
-}
-
-body .wrapper form label,
-body .gradient form label {
   background-color: #978461;
-  display: inline-block;
 }
 
 body .wrapper form select,
 body .gradient form select {
-  padding-bottom: 8px;
   border: none;
-  background-color: #f8f1de;
+  background-color: #978461;
   outline: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  height: 40px;
+  width: 300px;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+body .wrapper form select:hover, body .wrapper form select:focus,
+body .gradient form select:hover,
+body .gradient form select:focus {
+  background-color: #f8f1de;
 }
 
 body .wrapper #cardHolder,
@@ -336,6 +342,7 @@ body .gradient #cardHolder {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  margin-top: 50px;
 }
 
 body .wrapper #cardHolder .cardContainer,
@@ -344,6 +351,8 @@ body .gradient #cardHolder .cardContainer {
   margin: 20px;
   background: #3c3b21;
   padding: 10px;
+  -webkit-box-shadow: 5px 5px 20px -5px black;
+          box-shadow: 5px 5px 20px -5px black;
 }
 
 body .wrapper #cardHolder .cardContainer .imageContainer,
@@ -353,14 +362,16 @@ body .gradient #cardHolder .cardContainer .imageContainer {
   margin: 20px;
   overflow: hidden;
   border-radius: 67% 0;
+  -webkit-box-shadow: 10px 10px 10px #232319;
+          box-shadow: 10px 10px 10px #232319;
 }
 
 body .wrapper #cardHolder .cardContainer .imageContainer img,
 body .gradient #cardHolder .cardContainer .imageContainer img {
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
   height: 100%;
   width: 100%;
 }

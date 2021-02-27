@@ -32,39 +32,15 @@ body {
       height: 100vh;
     }
   
-    // .h1 {
-    //   display: flex;
-    //   flex-direction: column;
-    //   position: relative;
 
       h1 {
         font-size: 4rem;
         line-height: 4rem;
         padding: 50px 40px;
-        text-shadow: -4px -2px 3px rgba(35, 35, 25, 1);
-        // position: relative
+        // text-shadow: -4px -2px 3px rgba(35, 35, 25, 1);
+        text-shadow: 8px 6px 3px black;
+        position: relative
       }
-      
-      // .shadow {
-      //     color: $forest;
-      //     position: absolute;
-      //     width: 100%;
-      //     font-weight: 800;
-        //   perspective: 50px;
-        //   perspective-origin: 50% 100%;
-        //   display: inline-block;
-
-        // .shadow::after {
-        //   content: 'p Shadow q';
-        //   outline: 1px solid red;
-        //   position: absolute;
-        //   top: 0; right: 0; bottom: 0; left: 0;
-        //   transform: scaleY(0.5) rotateX(-15deg);
-        //   transform-origin: 50% 100%;
-        //   opacity: .3;
-    //     }
-    //   }
-    // }
     
     h2 {
       font-size: 1.5rem;
@@ -72,6 +48,7 @@ body {
       width: 230px;
       font-weight: 100;
       text-transform: uppercase;
+      text-shadow: 5px 5px 3px $deepForest;
     }
     
     label,
@@ -79,7 +56,7 @@ body {
     a,
     p {
       font-size: 1.3rem;
-      line-height: 5rem;
+      // line-height: 5rem;
       text-transform: none;
     }
 
@@ -90,24 +67,27 @@ body {
     form {
       display: flex;
       justify-content: center;
-      height: 50px;
+      // align-items: center;
 
       option {
         color: $deepForest;
         font-size: 1.2rem;
-      }
-
-      label {
         background-color: $bark;
-        display: inline-block;
       }
 
       select {
-        padding-bottom: 8px;
         border: none;
-        background-color: $birch;
+        background-color: $bark;
         outline: 0;
         appearance: none;
+        height: 40px;
+        width: 300px;
+        transition: all 0.8s ease;
+        box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+      }
+
+      select:hover, select:focus{
+        background-color: $birch;
       }
     }
     
@@ -116,12 +96,16 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       height: 100%;
+      margin-top: 50px;
+
 
       .cardContainer {
         border: 7px solid $bark;
         margin: 20px;
         background: $forest;
         padding: 10px;
+        box-shadow: 5px 5px 20px -5px black;
+
 
         .imageContainer {
           height: 280px;
@@ -129,9 +113,10 @@ body {
           margin: 20px;
           overflow: hidden;
           border-radius: 67% 0;
+          box-shadow: 10px 10px 10px $deepForest;
           img {
             object-fit: cover;
-            object-position: center;
+            object-position: top;
             height: 100%;
             width: 100%;
           }

@@ -88,22 +88,7 @@ plantApp.displayCards = (plantArray) => {
 
 		const plantImage = document.createElement('img');
 
-		// const broken = 'https://bs.floristic.org'
-		// if (plant.image_url.startsWith(broken) === true) {
-		// 	console.log('floristic')
-		// 	// newUrl = plant.image_url.slice(5,0).replace('http')
-		// 	// plantImage.src = newUrl
-		// } else {
-		// 	// console.log('image')
-		// 	plantImage.src = plant.image_url;
-		// }
-
-
-		plantArray.forEach(() => {
-			if (plant.image_url == null) {
-				return plant.image_url.splice(5,1)
-			}
-		})
+		plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
 
 
 		plantImage.src = plant.image_url;
@@ -117,22 +102,18 @@ plantApp.displayCards = (plantArray) => {
 		cardContainer.append(imageContainer, plantTitle);
 
 		treeCard.appendChild(cardContainer);
-
-		// console.log(plant.image_url)
-		//TESTING
-		// removeCharacterS = (httpsURL, positionOfS) => {
-		// 	part1 = httpsURL.substring(0, positionOfS);
-		// 	part2 = httpsURL.substring(positionOfS + 1, httpsURL.length);
-		// }
-
-		// const imgUrl = plant.image_url;
-		// console.log(removeCharacterS(imgUrl, 6))
-
 	})
 }
 
+
+plantApp.reload = () => {
+	document.querySelector('form').reset();
+}
+
+
 plantApp.init = () => {
-	plantApp.createEventListener();
+	plantApp.createEventListener()
+	plantApp.reload();
 };
 
 plantApp.init();
