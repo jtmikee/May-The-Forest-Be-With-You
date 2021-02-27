@@ -113,7 +113,7 @@ plantApp.reload = () => {
 
 plantApp.init = () => {
 	plantApp.createEventListener()
-	plantApp.reload();
+	plantApp.reload()
 };
 
 plantApp.init();
