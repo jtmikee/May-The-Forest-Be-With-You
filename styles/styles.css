@@ -227,7 +227,7 @@ body {
 
 .wrapper,
 .gradient {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   max-width: 1200px;
   background-image: url(../assets/treebark.jpg);
@@ -238,6 +238,13 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+@media (max-width: 640px) {
+  .wrapper,
+  .gradient {
+    width: 100%;
+  }
 }
 
 .wrapper::-webkit-scrollbar {
@@ -298,13 +305,19 @@ form select {
           appearance: none;
   height: 40px;
   width: 300px;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
   -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
-form select:hover, form select:focus {
+@media (max-width: 640px) {
+  form select {
+    width: 80%;
+  }
+}
+
+form select:hover {
   background-color: #f8f1de;
   cursor: pointer;
 }
@@ -341,7 +354,7 @@ form option {
 #cardHolder .cardContainer .imageContainer {
   height: 280px;
   width: 200px;
-  margin: 20px;
+  margin: 20px auto;
   overflow: hidden;
   border-radius: 67% 0;
   -webkit-box-shadow: 10px 10px 10px #232319;
@@ -357,11 +370,25 @@ form option {
   width: 100%;
 }
 
-footer {
+.footerWrapper {
   width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+footer {
   background: #232319;
   line-height: 7rem;
   margin: 0 auto;
   text-align: center;
   font-weight: 100;
+}
+
+@media (max-width: 640px) {
+  footer {
+    width: 100%;
+    line-height: 2rem;
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
 }

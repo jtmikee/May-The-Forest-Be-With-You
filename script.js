@@ -15,7 +15,7 @@ plantApp.getPlants = () => {
 		'params[token]': plantApp.apiKey,
 		'params[filter[establishment]]': 'native',
 		'params[filter_not[ATTRIBUTE]]': 'null',
-		'params[page]': '1'
+		'params[page]': randomPage()
 	});
 	fetch(url).then((response) => {
 		return response.json()
@@ -38,10 +38,12 @@ plantApp.createEventListener = () => {
 }
 
 plantApp.displayCards = (plantArray) => {
-
+	
 	const treeCard = document.querySelector('#cardHolder');
 	treeCard.innerHTML = '';
+	
 	plantArray.forEach((plant) => {
+		console.log(plantArray, plant.image_url)
 
 		const cardContainer = document.createElement('div');
 		cardContainer.classList.add('cardContainer');
@@ -50,8 +52,10 @@ plantApp.displayCards = (plantArray) => {
 		imageContainer.classList.add('imageContainer');
 
 		const plantImage = document.createElement('img');
-
-		plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
+		
+		if(plant.image_url) {
+			plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
+		
 
 		plantImage.src = plant.image_url;
 		plantImage.alt = plant.common_name;
@@ -63,6 +67,7 @@ plantApp.displayCards = (plantArray) => {
 		cardContainer.append(imageContainer, plantTitle);
 
 		treeCard.appendChild(cardContainer);
+		}
 	})
 }
 
@@ -72,9 +77,7 @@ plantApp.reload = () => {
 
 plantApp.init = () => {
 	plantApp.createEventListener()
-	plantApp.reload()
+	plantApp.reload();
 };
 
 plantApp.init();
-
-

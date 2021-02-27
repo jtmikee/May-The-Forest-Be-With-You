@@ -8,7 +8,7 @@ body {
   
 .wrapper,
 .gradient {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   max-width: 1200px;
   background-image: url(../assets/treebark.jpg); 
@@ -17,6 +17,9 @@ body {
   overflow: auto;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  @include mobileMQ {
+    width: 100%;
+  }
 }
 
 .wrapper::-webkit-scrollbar {
@@ -69,11 +72,14 @@ form {
     appearance: none;
     height: 40px;
     width: 300px;
-    transition: all 0.6s ease;
+    transition: all 0.6s ease-in;
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    @include mobileMQ {
+      width: 80%;
+    }
   }
 
-  select:hover, select:focus{
+  select:hover {
     background-color: $birch;
     cursor: pointer;
   }
@@ -103,10 +109,11 @@ form {
     .imageContainer {
       height: 280px;
       width: 200px;
-      margin: 20px;
+      margin: 20px auto;
       overflow: hidden;
       border-radius: 67% 0;
       box-shadow: 10px 10px 10px $deepForest;
+
       img {
         object-fit: cover;
         object-position: top;
@@ -117,11 +124,22 @@ form {
   }
 }
 
-footer {
+.footerWrapper {
   width: 80%;
-  background: $deepForest;
-  line-height: 7rem;
   margin: 0 auto;
-  text-align: center;
-  font-weight: 100;
+  max-width: 1200px;
 }
+
+  footer {
+    background: $deepForest;
+    line-height: 7rem;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 100;
+    @include mobileMQ {
+      width: 100%;
+      line-height: 2rem;
+      padding-top: 70px;
+      padding-bottom: 20px;
+    }
+  }
