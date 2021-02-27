@@ -15,14 +15,10 @@
 		<div class="wrapper">
 			<div class="gradient">
 				<div class="header">
-					<div class="h1">
-						<!-- <h1 class="shadow" aria-hidden="true">may the forest be with you</h1> -->
-						<h1>may the forest be with you</h1>
-					</div>
+					<h1>may the forest be with you</h1>
 					<form action="">
-						<label for="regionSelector">Region:</label>
-						<select name="regionSelector" id="regionSelector">
-							<option value="" disabled selected>Select Region</option>
+						<select name="regionSelector" id="regionSelector" aria-label="Choose Your Forest - Province Selector">
+							<option value="" disabled selected>Choose Your Forest</option>
 							<option value="ABT">Alberta</option>
 							<option value="BRC">British Columbia</option>
 							<option value="LAB">Labrador</option>
@@ -44,12 +40,13 @@
 					<!-- DYNAMIC CONTENT GOES HERE -->
 				</div>
 			</div>
+		</div><!--end of wrapper-->
+		</main>
+		<div class="footerWrapper">
+			<footer>	
+				<p>Created by Michael Campbell & Beatrice Duncan at <a href="https://junocollege.com/">Juno College</a></p>
+			</footer>
 		</div>
-		<!--end of wrapper-->
-	</main>
-	<footer>
-		<p>Created by Michael Campbell & Beatrice Duncan at <a href="https://junocollege.com/">Juno College</a></p>
-	</footer>
 	<script src="script.js"></script>
 </body>
 

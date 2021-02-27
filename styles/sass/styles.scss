@@ -1,146 +1,145 @@
 @import './variables';
 @import './setup';
-
-
+@import './mixins';
 
 body {
   background-color: $bark;
+}
   
-  .wrapper,
-  .gradient {
-    width: 75%;
-    margin: 0 auto;
-    max-width: 1200px;
-    background-image: url(../assets/treebark.jpg); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.wrapper,
+.gradient {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-image: url(../assets/treebark.jpg); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  @include mobileMQ {
+    width: 100%;
+  }
+}
 
-    .wrapper::-webkit-scrollbar {
-      display: none;
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.gradient {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(35,35,25,0.6608695652173913) 0%, rgba(35,35,25,0.8686979293823243) 11%, rgba(35,35,25,0.9449275362318841) 22%, rgba(35,35,25,1) 31%);
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  padding: 50px 40px;
+  text-shadow: 8px 6px 3px black;
+  position: relative
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 10px 15px;
+  width: 230px;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 3px $deepForest;
+}
+
+label,
+select,
+a,
+p {
+  font-size: 1.3rem;
+  text-transform: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+
+  select {
+    border: none;
+    background-color: $bark;
+    outline: 0;
+    appearance: none;
+    height: 40px;
+    width: 300px;
+    transition: all 0.6s ease;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    @include mobileMQ {
+      width: 80%;
     }
+  }
 
-    .gradient {
-      width: 100%;
-      background: linear-gradient(180deg, rgba(35,35,25,0.6608695652173913) 0%, rgba(35,35,25,0.8686979293823243) 11%, rgba(35,35,25,0.9449275362318841) 22%, rgba(35,35,25,1) 31%);
-      height: 100vh;
-    }
-  
-    // .h1 {
-    //   display: flex;
-    //   flex-direction: column;
-    //   position: relative;
+  select:hover, select:focus{
+    background-color: $birch;
+    cursor: pointer;
+  }
 
-      h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-        padding: 50px 40px;
-        text-shadow: -4px -2px 3px rgba(35, 35, 25, 1);
-        // position: relative
-      }
-      
-      // .shadow {
-      //     color: $forest;
-      //     position: absolute;
-      //     width: 100%;
-      //     font-weight: 800;
-        //   perspective: 50px;
-        //   perspective-origin: 50% 100%;
-        //   display: inline-block;
+  option {
+    color: $deepForest;
+    font-size: 1.2rem;
+    background-color: $bark;
+    position: absolute;
+  }
+}
 
-        // .shadow::after {
-        //   content: 'p Shadow q';
-        //   outline: 1px solid red;
-        //   position: absolute;
-        //   top: 0; right: 0; bottom: 0; left: 0;
-        //   transform: scaleY(0.5) rotateX(-15deg);
-        //   transform-origin: 50% 100%;
-        //   opacity: .3;
-    //     }
-    //   }
-    // }
-    
-    h2 {
-      font-size: 1.5rem;
-      margin: 10px 15px;
-      width: 230px;
-      font-weight: 100;
-      text-transform: uppercase;
-    }
-    
-    label,
-    select,
-    a,
-    p {
-      font-size: 1.3rem;
-      line-height: 5rem;
-      text-transform: none;
-    }
+#cardHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  margin-top: 50px;
 
-    a {
-      text-decoration: none;
-    }
-
-    form {
-      display: flex;
-      justify-content: center;
-      height: 50px;
-
-      option {
-        color: $deepForest;
-        font-size: 1.2rem;
-      }
-
-      label {
-        background-color: $bark;
-        display: inline-block;
-      }
-
-      select {
-        padding-bottom: 8px;
-        border: none;
-        background-color: $birch;
-        outline: 0;
-        appearance: none;
-      }
-    }
-    
-    #cardHolder {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 100%;
-
-      .cardContainer {
-        border: 7px solid $bark;
-        margin: 20px;
-        background: $forest;
-        padding: 10px;
-
-        .imageContainer {
-          height: 280px;
-          width: 200px;
-          margin: 20px;
-          overflow: hidden;
-          border-radius: 67% 0;
-          img {
-            object-fit: cover;
-            object-position: center;
-            height: 100%;
-            width: 100%;
-          }
-        }
-      }
-    }//end of cardholder
-  }//end of wrapper
-  
-  footer {
+  .cardContainer {
+    border: 7px solid $bark;
+    margin: 20px;
     background: $forest;
-    line-height: 4rem;
+    padding: 10px;
+    box-shadow: 5px 5px 20px -5px black;
+
+    .imageContainer {
+      height: 280px;
+      width: 200px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 67% 0;
+      box-shadow: 10px 10px 10px $deepForest;
+
+      img {
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footerWrapper {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+  footer {
+    background: $deepForest;
+    line-height: 7rem;
     margin: 0 auto;
     text-align: center;
     font-weight: 100;
+    @include mobileMQ {
+      width: 100%;
+      line-height: 2rem;
+      padding-top: 70px;
+      padding-bottom: 20px;
+    }
   }
-}
