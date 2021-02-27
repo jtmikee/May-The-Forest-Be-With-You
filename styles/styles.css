@@ -224,6 +224,10 @@ body {
   background-color: #978461;
 }
 
+body .displayNone {
+  display: none;
+}
+
 body .wrapper,
 body .gradient {
   width: 75%;

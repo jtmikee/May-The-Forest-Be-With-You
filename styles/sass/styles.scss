@@ -5,6 +5,10 @@
 
 body {
   background-color: $bark;
+
+  .displayNone {
+    display: none;
+  }
   
   .wrapper,
   .gradient {

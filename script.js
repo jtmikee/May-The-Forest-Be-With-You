@@ -56,10 +56,7 @@ plantApp.displayCards = (plantArray) => {
 		const plantImage = document.createElement('img');
 
 
-		if (plant.image_url.src == onload) {
-			plantImage.src = plant.image_url;
-		}
-
+		plantTitle.src = plant.image_url;
 		plantImage.alt = plant.common_name;
 
 		const plantTitle = document.createElement('h2');
@@ -70,6 +67,7 @@ plantApp.displayCards = (plantArray) => {
 
 		treeCard.appendChild(cardContainer);
 
+		console.log(img.src)
 
 
 
@@ -89,6 +87,25 @@ plantApp.displayCards = (plantArray) => {
 		imageContainer.classList.add('imageContainer');
 
 		const plantImage = document.createElement('img');
+
+		// const broken = 'https://bs.floristic.org'
+		// if (plant.image_url.startsWith(broken) === true) {
+		// 	console.log('floristic')
+		// 	// newUrl = plant.image_url.slice(5,0).replace('http')
+		// 	// plantImage.src = newUrl
+		// } else {
+		// 	// console.log('image')
+		// 	plantImage.src = plant.image_url;
+		// }
+
+
+		plantArray.forEach(() => {
+			if (plant.image_url == null) {
+				return plant.image_url.splice(5,1)
+			}
+		})
+
+
 		plantImage.src = plant.image_url;
 		plantImage.alt = plant.common_name;
 
@@ -101,8 +118,7 @@ plantApp.displayCards = (plantArray) => {
 
 		treeCard.appendChild(cardContainer);
 
-		console.log(plantArray)
-
+		// console.log(plant.image_url)
 		//TESTING
 		// removeCharacterS = (httpsURL, positionOfS) => {
 		// 	part1 = httpsURL.substring(0, positionOfS);
