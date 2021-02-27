@@ -5,48 +5,49 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./styles/styles.css">
 	<title>Canadian Trees 🇨🇦 🌲 </title>
 </head>
 
 <body>
-	<header>
-		<div class="wrapper">
-			<h1>may the forest be with you</h1>
-			<form action="">
-				<label for="regionSelector">Region:</label>
-				<select name="regionSelector" id="regionSelector">
-					<option value="ABT">Alberta</option>
-					<option value="BRC">British Columbia</option>
-					<option value="LAB">Labrador</option>
-					<option value="MAN">Manitoba</option>
-					<option value="NBR">New Brunswick</option>
-					<option value="NFL">Newfoundland</option>
-					<option value="NSC">Nova Scotia</option>
-					<option value="NUN">Nunavut</option>
-					<option value="ONT">Ontario</option>
-					<option value="PEI">Prince Edward Island</option>
-					<option value="QUE">Quebec</option>
-					<option value="SAS">Saskatchewan</option>
-					<option value="YUK">Yukon</option>
-				</select>
-			</form>
-		</div>
-		<!--end of wrapper-->
-	</header>
-
 	<main>
 		<div class="wrapper">
-			<div id="cardHolder">
-				<!-- DYNAMIC CONTENT GOES HERE -->
+			<div class="gradient">
+				<div class="header">
+					<div class="h1">
+						<h1 class="shadow" aria-hidden="true">may the forest be with you</h1>
+						<h1>may the forest be with you</h1>
+					</div>
+					<form action="">
+						<label for="regionSelector">Region:</label>
+						<select name="regionSelector" id="regionSelector">
+							<option value="" disabled selected>Select Region</option>
+							<option value="ABT">Alberta</option>
+							<option value="BRC">British Columbia</option>
+							<option value="LAB">Labrador</option>
+							<option value="MAN">Manitoba</option>
+							<option value="NBR">New Brunswick</option>
+							<option value="NFL">Newfoundland</option>
+							<option value="NSC">Nova Scotia</option>
+							<option value="NUN">Nunavut</option>
+							<option value="ONT">Ontario</option>
+							<option value="PEI">Prince Edward Island</option>
+							<option value="QUE">Quebec</option>
+							<option value="SAS">Saskatchewan</option>
+							<option value="YUK">Yukon</option>
+						</select>
+					</form>
+				</div>
+				<div id="cardHolder">
+					<!-- DYNAMIC CONTENT GOES HERE -->
+				</div>
 			</div>
 		</div>
 		<!--end of wrapper-->
 	</main>
-
-	<footer>Created by Michael Campbell & Beatrice Duncan at <a href="https://junocollege.com/">Juno College</a>
+	<footer>
+		<p>Created by Michael Campbell & Beatrice Duncan at <a href="https://junocollege.com/">Juno College</a></p>
 	</footer>
 	<script src="script.js"></script>
 </body>
