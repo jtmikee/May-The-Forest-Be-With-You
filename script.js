@@ -38,10 +38,10 @@ plantApp.createEventListener = () => {
 }
 
 plantApp.displayCards = (plantArray) => {
-	
+
 	const treeCard = document.querySelector('#cardHolder');
 	treeCard.innerHTML = '';
-	
+
 	plantArray.forEach((plant) => {
 		console.log(plantArray, plant.image_url)
 
@@ -52,28 +52,68 @@ plantApp.displayCards = (plantArray) => {
 		imageContainer.classList.add('imageContainer');
 
 		const plantImage = document.createElement('img');
-		
-		if(plant.image_url) {
+		plantImage.classList.add('defaultImage');
+
+		if (plant.image_url) {
 			plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
-		
 
-		plantImage.src = plant.image_url;
-		plantImage.alt = plant.common_name;
 
-		const plantTitle = document.createElement('h2');
-		plantTitle.innerText = plant.common_name;
+			plantImage.src = plant.image_url;
+			plantImage.alt = plant.common_name;
 
-		imageContainer.appendChild(plantImage);
-		cardContainer.append(imageContainer, plantTitle);
+			const plantTitle = document.createElement('h2');
+			plantTitle.innerText = plant.common_name;
 
-		treeCard.appendChild(cardContainer);
+			imageContainer.appendChild(plantImage);
+
+			const plantFamilyHolder = document.createElement('h2');
+			plantFamilyHolder.innerText = ''
+
+			const plantCommonHolder = document.createElement('h3');
+			plantCommonHolder.innerText = ''
+
+			
+			cardContainer.prepend(plantFamilyHolder)
+			cardContainer.append(imageContainer, plantTitle, plantCommonHolder);
+			
+			treeCard.appendChild(cardContainer);
+
+
+			plantImage.addEventListener('click', () => {
+
+				imageContainer.classList.remove('imageContainer')
+				imageContainer.classList.add('plantInfoContainer')
+				plantImage.classList.add('plantInfoImage')
+	
+				const plantSciName = document.createElement('h2');
+				plantSciName.innerText = `${plant.scientific_name}`
+				plantSciName.classList.add('plantSciName');
+				
+				const plantFamily = document.createElement('h2');
+				plantFamily.innerText = `Family: ${plant.family_common_name}`
+
+
+				plantTitle.innerText = plantSciName.innerText;
+				// plantFamilyHolder.innerText = plantFamily.innerText;
+
+				plantFamilyHolder.innerText = `Scientific Name:`
+
+				plantCommonHolder.innerText = plant.common_name
+	
+			})
 		}
+		
 	})
+	
+	
 }
+
 
 plantApp.reload = () => {
 	document.querySelector('form').reset();
 }
+
+
 
 plantApp.init = () => {
 	plantApp.createEventListener()

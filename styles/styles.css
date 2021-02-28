@@ -225,6 +225,10 @@ body {
   background-color: #978461;
 }
 
+.displayNone {
+  display: none;
+}
+
 .wrapper,
 .gradient {
   width: 75%;
@@ -361,7 +365,28 @@ form option {
           box-shadow: 10px 10px 10px #232319;
 }
 
-#cardHolder .cardContainer .imageContainer img {
+#cardHolder .cardContainer .imageContainer .defaultImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.plantInfoContainer {
+  height: 280px;
+  width: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+  -webkit-box-shadow: 10px 10px 10px #232319;
+          box-shadow: 10px 10px 10px #232319;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.plantInfoImage {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
