@@ -43,7 +43,6 @@ plantApp.displayCards = (plantArray) => {
 	treeCard.innerHTML = '';
 
 	plantArray.forEach((plant) => {
-		console.log(plantArray, plant.image_url)
 
 		const cardContainer = document.createElement('div');
 		cardContainer.classList.add('cardContainer');
@@ -56,7 +55,6 @@ plantApp.displayCards = (plantArray) => {
 
 		if (plant.image_url) {
 			plant.image_url = plant.image_url.replace('https://bs.floristic.org', 'http://bs.floristic.org');
-
 
 			plantImage.src = plant.image_url;
 			plantImage.alt = plant.common_name;
@@ -72,12 +70,9 @@ plantApp.displayCards = (plantArray) => {
 			const plantCommonHolder = document.createElement('h3');
 			plantCommonHolder.innerText = ''
 
-			
 			cardContainer.prepend(plantFamilyHolder)
 			cardContainer.append(imageContainer, plantTitle, plantCommonHolder);
-			
 			treeCard.appendChild(cardContainer);
-
 
 			plantImage.addEventListener('click', () => {
 
@@ -92,28 +87,19 @@ plantApp.displayCards = (plantArray) => {
 				const plantFamily = document.createElement('h2');
 				plantFamily.innerText = `Family: ${plant.family_common_name}`
 
-
 				plantTitle.innerText = plantSciName.innerText;
-				// plantFamilyHolder.innerText = plantFamily.innerText;
 
 				plantFamilyHolder.innerText = `Scientific Name:`
 
 				plantCommonHolder.innerText = plant.common_name
-	
 			})
 		}
-		
 	})
-	
-	
 }
-
 
 plantApp.reload = () => {
 	document.querySelector('form').reset();
 }
-
-
 
 plantApp.init = () => {
 	plantApp.createEventListener()

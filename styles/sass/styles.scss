@@ -5,10 +5,6 @@
 body {
   background-color: $bark;
 }
-
-.displayNone {
-  display: none;
-}
   
 .wrapper,
 .gradient {
@@ -53,6 +49,10 @@ h2 {
   text-shadow: 5px 5px 3px $deepForest;
 }
 
+h3 {
+  font-size: 1rem;
+}
+
 label,
 select,
 a,
@@ -62,7 +62,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  cursor: pointer;
 }
 
 form {
@@ -80,6 +80,7 @@ form {
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
     @include mobileMQ {
       width: 80%;
+      max-width: 300px;
     }
   }
 
@@ -135,34 +136,36 @@ form {
   margin: 20px auto;
   overflow: hidden;
   box-shadow: 10px 10px 10px $deepForest;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in;
+
+  .plantInfoImage {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%;
+  }
 }
-
-.plantInfoImage {
-  object-fit: cover;
-  object-position: top;
-  height: 100%;
-  width: 100%;
-}
-
-
 
 .footerWrapper {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   max-width: 1200px;
+  @include mobileMQ {
+    width: 100%;
+  }
 }
 
-  footer {
-    background: $deepForest;
-    line-height: 7rem;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: 100;
-    @include mobileMQ {
-      width: 100%;
-      line-height: 2rem;
-      padding-top: 70px;
-      padding-bottom: 20px;
-    }
+footer {
+  background: $deepForest;
+  line-height: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 100;
+  p {
+    padding: 50px 20px;
   }
+  @include mobileMQ {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+}

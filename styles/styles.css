@@ -225,10 +225,6 @@ body {
   background-color: #978461;
 }
 
-.displayNone {
-  display: none;
-}
-
 .wrapper,
 .gradient {
   width: 75%;
@@ -279,6 +275,10 @@ h2 {
   text-shadow: 5px 5px 3px #232319;
 }
 
+h3 {
+  font-size: 1rem;
+}
+
 label,
 select,
 a,
@@ -288,7 +288,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  cursor: pointer;
 }
 
 form {
@@ -318,6 +318,7 @@ form select {
 @media (max-width: 640px) {
   form select {
     width: 80%;
+    max-width: 300px;
   }
 }
 
@@ -382,11 +383,11 @@ form option {
   overflow: hidden;
   -webkit-box-shadow: 10px 10px 10px #232319;
           box-shadow: 10px 10px 10px #232319;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
 }
 
-.plantInfoImage {
+.plantInfoContainer .plantInfoImage {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
@@ -396,24 +397,32 @@ form option {
 }
 
 .footerWrapper {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   max-width: 1200px;
 }
 
+@media (max-width: 640px) {
+  .footerWrapper {
+    width: 100%;
+  }
+}
+
 footer {
   background: #232319;
-  line-height: 7rem;
+  line-height: 2rem;
   margin: 0 auto;
   text-align: center;
   font-weight: 100;
 }
 
+footer p {
+  padding: 50px 20px;
+}
+
 @media (max-width: 640px) {
   footer {
     width: 100%;
-    line-height: 2rem;
-    padding-top: 70px;
     padding-bottom: 20px;
   }
 }
