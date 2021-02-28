@@ -86,8 +86,6 @@ plantApp.displayCards = (plantArray) => {
 
 				treeCard.appendChild(cardContainer);
 
-				console.log(plantArray)
-
 				plantImage.addEventListener('click', () => {
 
 					imageContainer.classList.remove('imageContainer')
